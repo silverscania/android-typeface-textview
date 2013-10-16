@@ -49,6 +49,11 @@ public class TypefaceTextView extends TextView {
 
     public TypefaceTextView(final Context context, final AttributeSet attrs, final int defStyle) {
         super(context, attrs, defStyle);
+        
+        if(isInEditMode()) {
+        	return;
+        }
+        
         if (mTypefaces == null) {
             mTypefaces = new HashMap<String, Typeface>();
         }
